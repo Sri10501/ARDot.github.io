@@ -27,7 +27,7 @@
 <body>
   <div id="card">
     <!-- All you need to put beautiful, interactive 3D content on your site: -->
-    <model-viewer src="Model/DOT_AR.glb"
+    <model-viewer id="model" src="Model/Ceramic_pot_model.glb"
                   ios-src="Model/Ceramic_pot_model.usdz"
                   alt=""
                   shadow-intensity="0"
@@ -44,11 +44,22 @@
       <h1> Tamilarasi </h1>
 
       <div class="btn-container">
-       <button type="button">STOP</button>
-       <button type="button">RUN</button>
+       <button type="button" onclick="open()">Open</button>
+       <button type="button" onclick="remove()">Remove</button>
        <button type="button">WAVE</button>
       </div>
   </div>
+
+  <script>
+    var modelViewer = document.getElementById('model');
+    function open(){
+         modelViewer.animationName = 'Animation 1';
+    }
+    function remove(){
+         modelViewer.animationName = 'Animation 2';
+    }
+  </script>
+
         <!-- 💁 Include both scripts below to support all browsers! -->
 
   <!-- Loads <model-viewer> for modern browsers: -->
@@ -75,11 +86,3 @@
 
 </body>
 </html>
-    
-  
-  
-  
-  
-  
-  
-  
